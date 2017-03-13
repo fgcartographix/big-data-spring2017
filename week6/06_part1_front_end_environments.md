@@ -51,10 +51,12 @@ To work with our website, we need our computer to act like a web server, allowin
 Once there, type the following to start a simple Python server:
 
 ```xml
-$ python3 -m http.server 8080
+$ python -m http.server 8080
 ```
 
 With this running, open a web browser (i.e. Chrome) and access your site at: **http://localhost:8080**
+
+You might get a message that pops up with a note about accepting incoming connections or your Firewall. This is not a problem, you can click OK.
 
 When you modify and change files in web folder, just save the files, then refresh your page in the browswer. Your page will appear as it would if it were live on the internet, and changes will be shown, except this is only visible to you locally. This is called a development environment, and allows us to test changes and edit our site as if it were live on the web, but it not modifying anything actually live.
 

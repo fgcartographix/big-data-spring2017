@@ -9,9 +9,9 @@ In the website ecosystem, the next component is the behavior. How do we take the
 
 #### What is JavaScript?
 
-JavaScript is a web programming language that manipulates and controls the behavior of web pages by interacting with the various elements on the page and loading data. It, along with HTML and CSS, forms the foundation of modern web browsers and the internet. JavaScript is considered, unofficially, to be the most popular programming language in the world. Many web site templates, such as Bootstrap, are in JavaScript, and it is the programming language that most of the major mapping and data visualization libraries, including Leaflet and D3 that we are using in this course, are implemented in.
+JavaScript is a web programming language that manipulates and controls the behavior of web pages by interacting with the various elements on the page and loading data. It, along with HTML and CSS, forms the foundation of modern web browsers and the internet. Many web site templates, such as Bootstrap, are in JavaScript, and it is the programming language that most of the major mapping and data visualization libraries, including D3, are implemented in.
 
-One of the major concepts in web development is that of **server-side** versus **client-side**. The server is the location on the web that *serves* your website to the rest of the world, the client is the computer that is accessing that website, requesting information from the server. JavaScript can be both, but is primarily a client-side language, working on your client computer. In the manner we are using it, JavaScript is a scripting language that will operate in two fundamental ways. The first is executing scripts and tasks when the web page is loaded (i.e. load a dataset on page open), and the second is executing scripts and tasks after the web page visitor tells it to (i.e. clicking a button) or another task is completed (i.e. a menu is closed). When the script executes, it can manipulate the content of the page, change how it is being viewed through the browser, give information to a server, or tell the browser to go back to the server and get new information. Often, however, the instructions given by the script can be followed without additional communication with the server.
+One of the major concepts in web development is that of **server-side** versus **client-side**. The server is the machine that *serves* your website to the rest of the world, the client is the computer that is accessing that website (your computer), requesting information from the server. **Python is a server side language**, but JavaScript can be both, but **is primarily a client-side language**, working on your client computer. In the manner we are using it, JavaScript is a scripting language that will operate in two fundamental ways. The first is executing scripts and tasks when the web page is loaded (i.e. set up a page, or load a dataset on page open), and the second is executing scripts and tasks after the web page visitor tells it to (i.e. clicking a button) or another task is completed (i.e. a menu is closed). When JavaScript executes, it can manipulate the content of the page, change how it is being viewed through the browser, give information to a server, or tell the browser to go back to the server and get new information. Often, however, the instructions given by the script can be followed on the client without additional communication with the server.
 
 JavaScript, in a manner similar to CSS, interacts with HTML elements using the DOM.
 
@@ -19,11 +19,11 @@ JavaScript, in a manner similar to CSS, interacts with HTML elements using the D
 
 When you are working with D3 in the second half of the semester, some of your main goals will be to:
 
-* Create Page Elements
 * Load and Bind Data
-* Modify Element Properties
-* Write Functions
-* Listen for User Interaction
+* Create Page Elements
+* Modify and Set Element Properties
+* Write Functions (blocks of code)
+* Listen for User Interaction (ie clicks, hovers, rollovers)
 
 #### Link a JavaScript Document to your Site
 
@@ -51,8 +51,6 @@ Now, we are programming! Let's learn JavaScript!
 
 #### JavaScript Consoles
 
-Try out all of the examples today using [REPL.IT](https://repl.it/), an online sandbox for testing out JavaScript.
-
 *The In-browser JavaScript Console*
 
 JavaScript is the language of the modern web browser. Modern web browsers have JavaScript consoles built that we can explore the basics of the language with. Open up our browser, navigate to a page, and open the browser JavaScript console and do some basic coding to show some of the principles. If you are using Chrome or Firefox, there are integrated JavaScript consoles that allow you to input and explore JavaScript. Use **CTRL+SHIFT+K** (Windows)/**CMD+OPTION+K** (Mac) for Firefox, and **CTRL+SHIFT+J** (Windows)/**CMD+OPTION+J** (Mac) for Chrome. In the following steps we will introduce some concepts, try them using the console, and look for how the concepts manifest in our web map code.
@@ -72,48 +70,51 @@ var hello = "Hello world"
 console.log(hello)
 ```
 
+Try out all of the examples today using [REPL.IT](https://repl.it/languages/javascript), an online sandbox for testing out JavaScript.
+
 #### Introducing Objects: The Foundation of JavaScript
 
-Objects are the kings of JavaScript and almost everything you work with in JavaScript is an object. Objects are elements of JavaScript that have properties and values. To illustrate this, I will reference a nice example from W3schools, in real life, a car is an **object**. This car has **properties** like weight and color that are set to certain **values**, and it has **methods**, like start and stop.
+Objects are the kings of JavaScript and almost everything you work with in JavaScript is an object. Objects are the main elements of JavaScript, and they can have properties, and values. To illustrate this, I will reference a nice example from W3schools, in real life, a car is an **object**. This car has **properties** like weight and color that are set to certain **values**, and it has **methods**, like start and stop (methods themselves are actually objects).
 
 ![JS Object](http://duspviz.mit.edu/wp-content/uploads/2015/02/js_object.png)
 
 You will commonly be accessing objects within objects. Typical syntax might look like the following.
 
 ```js
-[object1].[object2].[method]
-
-// ie when working with Leaflet
-L.tileLayer().addTo(map);
-
-// ie when working with D3
-d3.select("body").append("svg");
+[object1].[nested_object].[nested_nested_object]
 
 // properties and methods
 var car = {
     make:"Ford",
     model: "Mustang",
     year: 2013,
-    color: "Red"
+    color: "Red",
+    accessories: {
+        windows: "Power",
+        transmission: "Automatic"
+    },
     start: function(){
-    	console.log("Car started!");
+    	console.log("Vroom! Car started!");
     }
 };
+
+console.log(car)
+console.log(car.make)
+console.log(car.accessories.windows)
 ```
 
-Our page elements from our HTML webpage document can be referenced through JavaScript. Using JavaScript, we can change the properties of these elements and tell them to do things, like change color, or disappear. Imagine in our car example, to create a Ferrari and tell it to be red, we can create a car **div** with **id="myFerrari"**, then make it red by setting the **color** method **(myFerrari.color = "red")**.
+Our page elements from our HTML webpage document can be referenced through JavaScript. Using JavaScript, we can change the properties of these elements and tell them to do things, like change color, or disappear. Going back to our car example, to create a Ferrari and tell it to be red, we can create a car **div** with **id="myFerrari"**, then make it red by setting the **color** method **(myFerrari.color = "red")**.
 
-Object properties, and objects themselves, can be stored stored and accessed for later use using variables.
-
-Try typing *car.start*. You should get confirmation your car started. This is a function stored as a property. What is a function? We'll get to that soon, let's talk more about our variables.
+Object and their properties can be stored stored and accessed for later use using variables. Try typing **car.start()**. You should get confirmation your car started. This is a function stored as a property. What is a function? We'll get to that soon, let's talk more about our variables. Hint, they are just like Python!
 
 #### Variables
 
-Variables are containers that hold data values, simple or complex, that can be referred to later in your code, much like algebra. For example, in order to fully instantiate the Leaflet map object, we have to use our script to create an object that will hold the Leaflet map object. The map object creates a map, but to put in our page, we need to create another object that will contain the map that is created. To do this, we use a [variable](http://www.w3schools.com/js/js_variables.asp).
+Variables are containers that hold data values, simple or complex, that can be referred to later in your code.
 
-The following are examples of variables. Plug these into your JavaScript console one by one, hitting enter after each. Note the semicolon. All individual lines in JavaScript must end with a semicolon.
+[Variables](http://www.w3schools.com/js/js_variables.asp) in JavaScript are alot like those in Python. The following are examples. Plug these into your JavaScript console one by one, hitting enter after each. **Note the semicolon!** All individual lines in JavaScript must end with a semicolon.
 
 ```js
+// Simple math (note, this is a comment!)
 var x = 5;
 var y = 6;
 var z = x + y;
@@ -129,7 +130,7 @@ z;
 
 #### Data Types
 
-These variable values fall into two different data types, primitive and reference. Data in JavaScript are objects that represent values or other objects. Primitive data types must be of a specific type, where Reference data types can be thought of a references to other objects in your document.
+Variables fall into two different data types, primitive and reference. Primitive data types must be of a specific type, where Reference data types can be thought of a references to other objects in your document.
 
 Primitive Data Types
 
@@ -141,18 +142,20 @@ Primitive Data Types
 
 Examples of JavaScript data, and what can be stored as a variable and referred to later are shown below. Variables can contain many different data types, including strings, numbers, and even entire objects, arrays, and functions. To familiarize yourself with data in JavaScript, try some of the following in your browser JavaScript console.
 
+All objects are mutable after being instantiated. Primitive values are immutable.
+
 #### Primitive Data Types
 
-##### String
+##### Strings
 
 Strings are text characters. They can be concatenated by using **+**.
 
 ```js
 var name = "Michael";
-var selection = "a";
+var last_name = "Foster";
 console.log(name);
-console.log(selection);
-console.log(name + selection); // string concatenation
+console.log(last_name);
+console.log(name + last_name); // string concatenation
 ```
 
 ##### Number
@@ -160,10 +163,10 @@ console.log(name + selection); // string concatenation
 Number types can hold integers and decimals.
 
 ```js
-var count = 25;
-var cost = 1.51;
+var count = 25; // integer
+var cost = 1.51; // decimal
 
-count + cost
+count + cost // returns decimal
 ```
 
 ##### Boolean
@@ -171,31 +174,33 @@ count + cost
 Boolean values are either **true** or **false**. They are good for evaluation and flow control. Boolean values are the result of **comparison operators**.
 
 ```js
+// you can set variables to be true or false
 var found = true;
 var lost = false;
 
+// comparisons can evaluate to true or false
 9 >= 10 // returns false
 11 > 10 // returns true
 ```
 
-Boolean values can be applied to logical operators.
+Boolean values can also be applied to logical operators.
 
 * **&&** - AND operator. True only if both values are true.
 * **||** - OR operator. True if one or both values are true.
 * **!** - NOT operator. True if statement is false.
 
-##### Null
+##### Null and Undefined Objects
+
 NULL objects can be created if you need an object, but you dont have anything to put in it yet you can populate it at a later point
 
 ```js
+// null object
 var object = null;
-```
 
-##### Undefined
-Undefined creates the variable so it exists in the DOM, but does not give it any definition. You can define it (populate it) at a later point.
-
-```js
+// undefined object
 var flag = undefined;
+
+// undefined object
 var ref;
 ```
 
@@ -208,7 +213,7 @@ var array = []; //empty array
 var array1 = [ 1, 3, 5 ]; //populated array
 ```
 
-You can access array elements much like in Python. Note the first position is 0.
+You can access array elements much like in Python lists. Just like Python, JavaScript is a **zero-index** language, meaning you access values in arrays using index values.
 
 ```js
 array1[];
@@ -221,12 +226,12 @@ array1[1];
 
 ##### Object Literal
 
-Object Literal data type is a comma separated list of name value pairs. Kind of like a **dict** in Python.
+Object Literal data type is a comma separated list of name value pairs. Kind of like a **dict** in Python. Our car above was this example.
 
 ```js
 var workshop = {
-    name: "Web Map Workshop",
-    year: 2015
+    name: "Big Data Class",
+    year: 2017
 };
 
 console.log(workshop.name);
@@ -247,6 +252,12 @@ When you call the variable **myFunction**, it will run the function you have sto
 
 Introducing functions. Just like Python, functions are pieces of code that can run when called upon. To use a function, it must be defined using the *function* declaration.
 
+##### Parameters versus Arguments
+
+In the function definition above, we listed parameters that are taken by the function. *Parameters* are placeholders for objects that will be passed to the function when called. *Arguments* are the real values of the objects received as parameters for the function when it is invoked.
+
+If a parameter is defined in JavaScript, it must be passed an argument when invoked. However, it is possible to provide default values if an argument is not received. [More on that here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+
 When defining a function, you also define the parameters that are required for the function. These parameters are placeholders for accepting variable values created outside of the function. For example, let's look at a basic function.
 
 ```js
@@ -264,12 +275,6 @@ multiply_this(x,y); // run function with x and y as our arguments
 ```
 
 When a function reaches a *return* statement, it will stop executing. The return value is returned back to the calling object and carried forward.
-
-##### Parameters versus Arguments
-
-In the function definition above, we listed parameters that are taken by the function. *Parameters* are placeholders for objects that will be passed to the function when called. *Arguments* are the real values of the objects received as parameters for the function when it is invoked.
-
-If a parameter is defined in JavaScript, it must be passed an argument when invoked. However, it is possible to provide default values if an argument is not received. [More on that here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 
 ##### Ways to Declare Functions
 
@@ -306,7 +311,48 @@ mutiply_that(x,y) // run function
 20 // return value
 ```
 
-Anonymous functions, or function expressions, are used alot in D3. When you see a function without a name or declaration, that is what is going on.
+### Anonymous Functions
+
+An anonymous function is a function that was declared without any named identifier to refer to it. As such, an anonymous function is usually not accessible after its initial creation.
+
+Normal function definition:
+
+```js
+function hello() {
+  alert('Hello world');
+}
+hello();
+```
+
+Anonymous function definition:
+
+```js
+var anon = function() {
+  alert('I am anonymous');
+};
+anon();
+```
+
+More on [anonymous functions](https://en.wikibooks.org/wiki/JavaScript/Anonymous_functions) from wikibooks.
+
+### Closure
+
+Closure are local variables of a function, kept alive after the function has been returned. This can happen when you store a function within a variable, and you can refer to the function output directly. Similar to Python, you can store function returns and use them elsewhere in your code. It is a method pointer.
+
+```js
+function sayHello(name) {
+    var text = 'Hello, ' + name + '!';
+    var sayAlert = function() { alert(text); }
+    
+    return sayAlert;
+}
+var say = sayHello('John');
+
+say();
+alert(say.toString());    // Returns the code of the anonymous function
+```
+
+More reading on [Closures](https://en.wikibooks.org/wiki/JavaScript/Closures) from Wikibooks.
 
 [More on Function Definition and Anonymous Functions](http://www.w3schools.com/Js/js_function_definition.asp)
 
@@ -315,21 +361,27 @@ Anonymous functions, or function expressions, are used alot in D3. When you see 
 Functions are objects, and can have both properties and methods. They can be stored as variables and referred to later. Functions can be stored within other objects as methods of that object, and then referred to later. For example:
 
 ```js
-var newCar = {
-    make: "Subaru",
-    model: "Forrester",
-    color: "Blue",
+// properties and methods
+var car = {
+    make:"Ford",
+    model: "Mustang",
+    year: 2013,
+    color: "Red",
+    accessories: {
+        windows: "Power",
+        transmission: "Automatic"
+    },
     start: function(){
-        console.log("Vroom!"); // can hold block of code to run!
+        console.log("Vroom! Car started!");
     }
-}
+};
 
 // view the data values
-console.log(newCar);
-console.log(newCar.make);
+console.log(car);
+console.log(car.make);
 
 // or start the car
-newCar.start();
+car.start();
 ```
 
 ##### Function Hoisting
@@ -375,11 +427,19 @@ Methods are the options and actions that can be performed on objects. Using the 
 Properties are the values associated with a JavaScript object. Let's use the car example again, for the object car, say it has the properties of make, model, weight, and color. Each of these can be set to a value.
 
 ```js
+// properties and methods
 var car = {
     make:"Ford",
     model: "Mustang",
     year: 2013,
-    color: "Red"
+    color: "Red",
+    accessories: {
+        windows: "Power",
+        transmission: "Automatic"
+    },
+    start: function(){
+        console.log("Vroom! Car started!");
+    }
 };
 ```
 
@@ -400,7 +460,7 @@ If we wanted to change the color, we would access it through this method. For ex
 
 #### Flow Control
 
-Statements in your document will run top to bottom, but you can control this using conditionals and loops.
+Statements in your document will run top to bottom when your script is run, but you can control this using conditionals and loops.
 
 * **Conditionals** are *if...else* statements.
 * **Loops** are *while* or *for* statements.
@@ -409,7 +469,7 @@ Statements in your document will run top to bottom, but you can control this usi
 
 Run pieces of code if an expression produces a boolean value. Your code can 'diverge' and run different paths.
 
-Conditionals run if true, skip if false.
+Conditionals will run one block of code if true, another block if false.
 
 ```js
 > var number = 100;
@@ -459,7 +519,7 @@ for(var i=0; i<1000, i++){
 }
 ```
 
-You can also use for loops to loop through arrays and datasets.
+You can also use for loops to loop through arrays and datasets. We'll do this in a little bit. Looks very similar to Python, we just have to declare the index variable.
 
 ```js
 // iterate through a dataset, logging values to the console
@@ -476,11 +536,11 @@ Similar to the for loop, the while loop
 var counter = 0;
 while(counter < 1000){
 	// code here will run
-	counter += 1 // adds 1 to counter each time, will stop at 1000
+	counter++ // adds 1 to counter each time, will stop at 1000
 }
 ```
 
-Loops that don't end are called infinite loops, and they will crash your program!
+Loops will run until the conditional that it is operating on evaluates to false. Loops that don't end are called infinite loops, and they will crash your program!
 
 #### JSON: JavaScript Object Notation
 
@@ -506,16 +566,17 @@ var dataset = {
   "type": "Feature",
   "geometry": {
     "type": "Point",
-    "coordinates": [125.6, 10.1]
+    "coordinates": [-71.093027,42.359225]
   },
   "properties": {
-    "name": "Dinagat Islands"
+    "name": "MIT Main Campus"
   }
 }
 
 console.log(dataset);
 console.log(dataset.type);
 console.log(dataset.geometry.coordinates);
+console.log(dataset.geometry.coordinates[0]);
 console.log(dataset.properties);
 ```
 
@@ -540,14 +601,21 @@ console.log(data);
 // iterate through the array, logging values to the console
 for(var i in data){
     fName = data[i].firstName;
-    lName = data[i].lastName;
     // do something with each value of the array
     console.log(fName);
-    console.log(lName);
 }
 ```
+Note the differences with Python. Now wrap it in a function!
 
-Note the differences with Python.
+```js
+function get_first_names(data){
+    for(var i in data){
+        fName = data[i].firstName;
+        // do something with each value of the array
+        console.log(fName);
+    }    
+}
+```
 
 #### Accessing Elements of your Page
 
@@ -568,7 +636,7 @@ You can access elements by DOM selectors. Use the [W3 HTML DOM Elements](http://
 document.getElementById("foo");
 
 // Access element by class name
-document.getElementByClassName("class-name")';
+document.getElementByClassName("my_paragraphs")';
 ```
 
 #### Event Listeners
@@ -586,11 +654,11 @@ function displayDate() {
 }
 ```
 
-This is something you can simplify using the jQuery library!
+The [Date](https://www.w3schools.com/jsref/jsref_obj_date.asp) object is built in and lets you work with dates and times.
 
 #### Working with Libraries
 
-Unless you want to become a hardcore JavaScript master, most often, you will be working with a library that is already written. A library is a collection of pre-written JavaScript with allows for easier development of JavaScript based applications. Libraries are packages of code that when loaded into your document allow access to the objects of that code. In this class, we are primarily going to be using three JavaScript libraries: **jQuery**, **Leaflet**, and **D3**.
+Unless you want to become a hardcore JavaScript master, most often, you will be working with a library that is already written... Just like Python! A library is a collection of pre-written JavaScript with allows for easier development of JavaScript based applications. Libraries are packages of code that when loaded into your document allow access to the objects of that code. In this class, we are primarily going to be using two JavaScript libraries: **jQuery** and **D3**.
 
 What are these used for?
 

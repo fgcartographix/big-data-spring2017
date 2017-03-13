@@ -1,5 +1,5 @@
-# Front End Environments
-## HTML/CSS/JavaScript: Midterm Presentation Instructions
+# Big Data, Visualization, and Society
+## Midterm Presentation Instructions
 
 ### Midterm Requirements
 

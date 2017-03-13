@@ -688,21 +688,7 @@ Display standing up of [D3 map of US Counties](http://bl.ocks.org/mbostock/33063
 
 JavaScript is usually a client-side language, meaning all of the code goes to the client. This can present efficiency problems and introduce security problems though, for obvious reasons. It is possible to use JavaScript on the server-side. Probably the most popular server-side JavaScript implementation is [NodeJS](https://nodejs.org/en/). NodeJS is a runtime that runs on the server to provide fast and dynamic applications, and pushes select output to the client. It can be used for both production and development, and allows you to install Leaflet, D3 and other libraries on your server. We have plenty else to focus on today, however, so this can come later.
 
-For a nice intro to NodeJS, visit the [DUSPviz NodeJS mapping tutorial](http://duspviz.mit.edu/web-map-workshop/leaflet_nodejs_postgis/).
-
-### Learning Leaflet
-
-#### Web Map Workshop
-
-If you want to learn more, and dig into Leaflet further. We have a full course on mapping with Leaflet on the DUSPviz website. You can find it at the following address! Here are some good sites.
-
-[DUSPVIZ](http://duspviz.mit.edu/web-map-workshop/)
-
-[LeafletJS Examples](http://leafletjs.com/examples.html)
-
-[Making a Leaflet Choropleth Map](http://leafletjs.com/examples/choropleth.html)
-
-[Leaflet Proportional Symbol Map Example](http://bl.ocks.org/rgdonohue/bb2fdafab5ee7532df52)
+For an intro to NodeJS, visit the [DUSPviz NodeJS mapping tutorial](http://duspviz.mit.edu/web-map-workshop/leaflet_nodejs_postgis/).
 
 ### Website Frameworks
 

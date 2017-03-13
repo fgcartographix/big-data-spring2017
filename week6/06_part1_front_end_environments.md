@@ -76,25 +76,22 @@ All HTML documents start with the following line of code:
 
 This tag states to the browser that the rest of your file will be written using HTML. 
 
-HTML is a markup framework language, and acts as the bones of any website. Content is organized into elements, and elements on the page are signified by tags. Elements of the page can be text blocks, links, images, tables, and even shapes. Tags are keywords surrounded by angled brackets. The rest of our document will follow a very simple rule, no matter how complex the code. When you create an element using a tag (aka start tag), you will need to signify where that element ends (aka end tag). **The content of each element goes between the tags**.
-
-
-Typical tag structure:
+HTML is a markup framework language, and acts as the bones of any website. Content is organized into elements, which can then be filled with content, made interactive, and styled.
 
 ```xml
-<tag>...</tag>
+<element>Content goes here!</element>
 ```
 
 A **void element**. Some elements are contained in one tag, such as images. These elements are called void elements.
 
 ```xml
-<tag />
+<element />
 ```
 
-A **comment**. Comments look like the following. They are used to write human-readable notes in your code, but are ignored by the browser. They are useful for explaining complex parts of your file to other people that might read your code.
+A **comment**. Comments look like the following. They are used to write human-readable notes in your code, but are ignored by the browser.
 
 ```xml
-<!-- ... -->
+<!-- This is a comment -->
 ```
 
 A basic page, all together, will look like this.

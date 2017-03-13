@@ -16,8 +16,7 @@ In the following steps, we are going to create a website. To do so, we'll create
 
 ![Environment](images/environment.png)
 
-HTML, standing for [HyperText Markup Language](https://en.wikipedia.org/wiki/HTML), organizes the **content**
-of your page by creating elements in which your page materials are contained.
+HTML, standing for [HyperText Markup Language](https://en.wikipedia.org/wiki/HTML), organizes the **content** of your page by creating elements in which your page materials are contained.
 
 ## Getting Started
 
@@ -28,7 +27,7 @@ We are going to work with the website repository we created in the first week of
 3. View the markdown document (.md) on github.com in your repository.
 4. Write all of your code in Sublime Text, and save your files in your web folder.
 
-Copy the **big-data** folder from the main class repo to your **username.github.io** directory. Then use terminal to **change directory** to the folder (website). This is our web directory that you can access by opening a web browser (such a Chrome) and navigating to **username.github.io/big-data**.
+Copy the entire **big-data** folder from the main class repo to your **username.github.io** directory. Then use terminal to **change directory** to the root of the repository (website). This is our web directory that you can access by opening a web browser (such a Chrome) and navigating to **username.github.io/big-data**.
 
 ### Organize your Directory
 
@@ -113,7 +112,7 @@ A basic page, all together, will look like this.
 </html>
 ```
 
-Copy and paste this into a blank text document in Sublime, and save it in your **github.io/big-data** repository as *index.html*. This will now become the main page for your big-data page on your website.
+Copy and paste this code into a blank text document in Sublime, and save it in your **github.io/big-data** repository as *index.html*. This will now become the main page for your big-data page on your website.
 
 Save it and view it at **http://localhost:8080/big-data**.
 
@@ -236,7 +235,7 @@ The h1 tag signifies a heading, this is a bolded style of text that vary in size
 
 #### ii. Add a Link
 
-Adding a link to your site is simple. To add a link, we use the a tag. The a tag defines a hyperlink that can be used to link from one page to another. HTML tags can have attributes. Attributes define and provide additional information about an element. To create a hyperlink, we use the href attribute of the a tag. The following line contains a link to the DUSP home page, and illustrates how you would set up a link. You can place links separate from your paragraphs, or place them within. Write the following line of code at the end your second paragraph, just before the p end tag.
+Adding a link to your site is simple. To add a link, we use the a tag. Write the following line of code at the end your second paragraph, just before the p end tag.
 
 ```xml
 <a href="http://dusp.mit.edu">Take me to DUSP.</a>
@@ -253,15 +252,13 @@ Adding an image is just as easy as adding a hyperlink, although a bit different.
 * Locate the folder named **images** that you copied to your web directory. *You will find one image here named **cat.jpg**. Here you store all subsequent images you want to use in your page.*
 * Use the **img** tag to link to that image in your **index.html**
 
-Your file structure, once the **images** folder is created and you have copied **cat.png**. In other words, the image is now being served.
+Your file structure, once the **images** folder is created and you have copied **cat.jpg**. In other words, the image is now being served.
 
 ![file structure](http://duspviz.mit.edu/wp-content/uploads/2015/01/file-structure-images1.png)
 
 Now we can add the image to our index.html. The following line of code uses the img tag, and then links to our image. We will use the **src** attribute to name the source of the image. The image is coming from our own server, we don't need to go externally to get it, so we can put the name of the folder and image as our image address.
 
 Copy and paste this following line in between the **body** tags in your **index.html**, after your last paragraph.
-
-*Can you add another image, perhaps one showing Pennsylvania?*
 
 If you want to add an image from another page, you can simply include the URL at which the image is located. The following links to an image on Wikimedia.
 

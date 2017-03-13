@@ -664,17 +664,21 @@ What are these used for?
 
 **jQuery** is great for adding user interaction and making calls to other websites, for example, you can easily use it to load data. [Visit the jQuery homepage](http://jquery.com/).
 
-Adding jQuery to your webpage is done by including the following line of code at the bottom of your body section. Please put this in your page.
+Adding jQuery to your webpage is done by including the following line of code at the bottom of your body section.
 
 ```xml
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 ```
-
-**Leaflet** is an easy to use mapping library that makes nice slippy maps for displaying data.
 
 **D3** stands for Data Driven Documents, and is a library designed for visualizing data and making beautiful interactive graphics. D3 uses JavaScript to **bind** data values to page elements and changes properties of those elements accordingly. Very powerful.
 
-#### Stand Up a Simple D3 Graphic
+```xml
+<script src="https://d3js.org/d3.v4.min.js"></script>
+```
+
+ Please put these in your page.
+
+#### Get Started with a Simple D3 Graphic
 
 D3 is a largely open source and freely available library. Next week, we will get into the guts of D3, but one of the best ways to get started is to read and implement some of the code available online. Mike Bostock, the creator of D3, has implemented a website called [Bl.ocks](https://bl.ocks.org/-/about) that is designed to display code and showcase examples of D3 code saved on Github. Users can create a [Github Gist](https://gist.github.com/), and then point people to Bl.ocks to view the example. For example, a really simple network block, created by user Jose Christian, can be found on [his Bl.ock page](http://bl.ocks.org/jose187/4733747).
 
@@ -682,7 +686,7 @@ To stand up a simple D3 visualization from blocks, copy the respective files int
 
 #### In Class Example
 
-Display standing up of [D3 map of US Counties](http://bl.ocks.org/mbostock/3306362). Your homework will be based on this Bl.ock example.
+Display how to set up [D3 map of US Counties](http://bl.ocks.org/mbostock/3306362). Your homework will be based on this Bl.ock example.
 
 #### Server-side JavaScript
 

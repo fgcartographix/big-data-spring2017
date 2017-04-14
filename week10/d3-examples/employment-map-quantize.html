@@ -38,11 +38,11 @@ var quantize = d3.scale.quantize()
     .domain([0, .15])
     .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
 
-var projection = d3.geo.albersUsa()
+var projection = d3.geoAlbersUsa()
     .scale(1000)
     .translate([width / 2, height / 2]);
 
-var path = d3.geo.path()
+var path = d3.geoPath()
     .projection(projection);
 
 var svg = d3.select("body").append("svg")

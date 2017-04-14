@@ -33,7 +33,7 @@ D - Democrat
 
 * Data is from [National Archives and Records Administration](https://www.archives.gov/federal-register/electoral-college/historical.html)
 
-You can refer to the slider example made in class for this exercise.
+You can refer to the slider example made in class for this exercise to help you figure out a solution.
 
 * [Slider Map Example - Mike Foster](http://duspviz.mit.edu/d3-workshop/examples/session4/boston-slider-map.html)
 
@@ -45,4 +45,5 @@ You can refer to the slider example made in class for this exercise.
 ### In-class Exercise
 
 In-class exercise for this week located at:
+
 [http://duspviz.mit.edu/d3-workshop/mapping-data-with-d3/](http://duspviz.mit.edu/d3-workshop/mapping-data-with-d3/)
